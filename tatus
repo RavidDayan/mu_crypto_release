@@ -1,0 +1,507 @@
+[33mcommit 3307c42f10fb8724ddcf09996f830f007503f46c[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdev/openssl-3.5.1[m[33m)[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 18:08:03 2025 +0300
+
+    openssl: update generated files
+
+[33mcommit 1ca9a45f19b17f048343b24b7dc9db435b384503[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:34:51 2025 +0300
+
+    openssl: update submodule to 3.4.0
+
+[33mcommit 59972fbb24f1af55aba18a79cc1fdcfba0c1d4c7[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:30:46 2025 +0300
+
+    openssl: add Library/OpensslLib/openssl to includes, drop e_os.h hack
+
+[33mcommit ccc9c23fcb48218062cc3866fc8a2b378156cb1a[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:26:10 2025 +0300
+
+    CrtLibSupport: add intptr_t
+
+[33mcommit b4d580930ae1931c1f3a058314f85f990a529074[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:25:01 2025 +0300
+
+    CrtLibSupport: add timezone
+
+[33mcommit 2b860c26bf1bf15f425b3dd029f1651dc11d8f04[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:22:50 2025 +0300
+
+    CrtLibSupport: add mktime()
+
+[33mcommit d0382483c99c31897c909fda1ab0f3b073ce72e4[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:20:31 2025 +0300
+
+    CrtLibSupport: factor out EFI_TIME -> time_t calculation to new function
+
+[33mcommit b080788ae6de011c748dcb37480ace6384803a8d[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:17:44 2025 +0300
+
+    CrtLibSupport: fix gettimeofday()
+
+[33mcommit c95db02b9f9532eb4926f8dd3c15819b84fec369[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:14:05 2025 +0300
+
+    CrtLibSupport: add sleep()
+
+[33mcommit fca951bd7c905aa4c1cd2850bb48c2b1a1167b13[m
+Author: Ravid Dayan <t-raviddayan@microsoft.com>
+Date:   Tue Aug 5 16:05:21 2025 +0300
+
+    starting to work from branch dev/openssl-3.0.15
+
+[33mcommit a50d6271943b407f8ab1938b4140fd1641bbe342[m[33m ([m[1;31morigin/dev/post-quantum-crypto[m[33m, [m[1;31morigin/dev/openssl-3.0.15[m[33m, [m[1;32mdev/openssl-3.0.15[m[33m)[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Thu Mar 13 17:52:00 2025 +0200
+
+    more uncrustify reformatting
+
+[33mcommit 8c4840818099fe775b96479466f17fb2b56750fb[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Thu Mar 13 17:43:22 2025 +0200
+
+    fix line-ending check
+
+[33mcommit dcf5b6373ef06620c2e1ba2f3f5dd0ee87ef437e[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Thu Mar 13 10:06:16 2025 +0200
+
+    uncrustify formatting OpensslPkg
+
+[33mcommit bb6f3f5b143236a5e54dc75cddc2ef8b72764d97[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Mon Jan 6 15:45:52 2025 +0200
+
+    Update generated files based on OpenSSL 3.0.15
+
+[33mcommit c9a9c4ed660276f01f16e94bacc91b503973bf8f[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Mon Jan 6 15:04:49 2025 +0200
+
+    update openssl submodule 3.0.9 -> 3.0.15
+
+[33mcommit b54c1824bc9acfa8bdad6d0d2edd5ca50d853ff5[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Thu Aug 22 11:55:02 2024 +0300
+
+    remove BN and EC accel for size optimization
+
+[33mcommit b29a3b02e9844bbe827b7b2f119a13becdfd8394[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Thu Aug 22 11:38:42 2024 +0300
+
+    add define of maximum unsigned size_t
+
+[33mcommit 4218bb77ae9579ee7c921ae39f64ec48cc1c8f2d[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Thu Aug 22 11:36:15 2024 +0300
+
+    Enable memcpy sys call in RISCV64 build
+
+[33mcommit 4bbd688947ae618b1024e34209a54769131cf979[m
+Author: dor <dor@dor.dor>
+Date:   Tue Jul 16 17:38:52 2024 +0300
+
+    add missing gcc instructions for IA32 build
+
+[33mcommit 1af9369f866bf44570ad5a609bdfe09e0440c5f2[m
+Author: dor <dor@dor.dor>
+Date:   Tue Jul 9 17:02:46 2024 +0300
+
+    Add instrinsics to support building openssl3 on IA32 windows -> IA32 standard build successfully
+
+[33mcommit 9b7baa7d6f44cb6714a376ebd3f59132ea30a624[m
+Author: dor <dor@dor.dor>
+Date:   Tue Jul 9 16:13:49 2024 +0300
+
+    run configure.py to update generated files -> X64 STANDARD build successful
+
+[33mcommit f712448ef4f64d10567b5677ff9369f7a64b47e3[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 16:04:24 2024 +0300
+
+    add UEFI provider
+
+[33mcommit 7e6ab100c431bfe9c71eb20835ed0e26d8d40bcb[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 16:01:40 2024 +0300
+
+    add more dummy implementation of openssl
+
+[33mcommit 7b943dd7dd49a71ea228f4cce98399d5b219ca14[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 15:24:33 2024 +0300
+
+    add implemention of _ftol2_sse() to avoid build error
+
+[33mcommit fcd2d8b0e08419560d3c37042f3e27ad1df25a6c[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 15:23:23 2024 +0300
+
+    more openssl 3.0 adaptation + add stub folder
+
+[33mcommit 9e37bec0a7756f69e8cec814e9276ace5b8a4f20[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 15:13:06 2024 +0300
+
+    ERR_GET_FUNC is gone
+
+[33mcommit 06ca939d486054126925e52fcd831ba44073baa1[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 15:11:25 2024 +0300
+
+    remove BIO_* dummy functions
+
+[33mcommit 3ca31be47d4960e1c4be7c980dfe7f25ffa39199[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 15:09:53 2024 +0300
+
+    remove openssl deprecation warnings
+
+[33mcommit af4d79962bfb9dc956eb3b09261192adaff77b67[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 15:07:41 2024 +0300
+
+    adapt CryptSm3 to openssl 3.0
+
+[33mcommit 9e5bd4540061e50a31f413cceace4e54dde2ea82[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 13:24:05 2024 +0300
+
+    update uefiasm.conf
+
+[33mcommit a4e96b8afb95fdefbcb8b78a58c15faf6d91dd49[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 13:22:32 2024 +0300
+
+    update openssl*.inf files for openssl 3.0
+
+[33mcommit bc5b97540111fe8cbd12ff886114a077e5144e0b[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 13:12:17 2024 +0300
+
+    cleanup openssl1.1.1 generated files and code
+
+[33mcommit a1cba4d9f2425bdef13ca5e2bb4e0035b367573b[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 13:01:30 2024 +0300
+
+    add openssl3 configure scripts
+
+[33mcommit a88e1abc55795a564801c221ba3426848b550a66[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 12:58:51 2024 +0300
+
+    update submodule to openssl-3.0.9
+
+[33mcommit 7267e15631e169f9d90f765d110bfa932f540c30[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Tue Jul 9 12:15:08 2024 +0300
+
+    change to howto.txt
+
+[33mcommit d1daee16cce7c8a90df588ce61956343ffd82a19[m[33m ([m[1;31morigin/release/202405-dev[m[33m, [m[1;31morigin/dev/202405[m[33m)[m
+Author: Inbal Levi <sinbal2l@gmail.com>
+Date:   Thu Feb 20 09:11:37 2025 -0600
+
+    Avoid UB in TlsVersion Init
+    
+    Added casting to prevent shift left of 8 bits (equal to size of type). (similar to what's been done in other places, e.g. https://github.com/microsoft/mu_basecore/blob/fabbe775f9c6e375174067ea2df1e50ecb9bad50/MdePkg/Include/Ppi/PciCfg2.h#L29)
+
+[33mcommit 9ceb14072aebc6997bd2b0024855c0e1459e9618[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Thu Jan 30 10:29:30 2025 +0200
+
+    format with uncrustify
+
+[33mcommit 0aa9d4dafc75c0830e50a5b09799f633e7d330b3[m
+Author: DorLevi95 <dorlevi@microsoft.com>
+Date:   Wed Jan 29 16:53:58 2025 +0200
+
+    fix bug at Pkcs7GetCertificatesList - causes failure on NewP7Data free
+
+[33mcommit 5ae3a6dcb074445583f9eb43d46aa144737866fc[m
+Author: Doug Flick <dougflick@microsoft.com>
+Date:   Thu Feb 6 10:41:59 2025 -0800
+
+    Updating Submodule MU_BASECORE to point to latest commit
+    
+    This commit updates the MU_BASECORE submodule to point to the latest
+    commit. This removes an issue with zeex/subhooks submodule that was
+    causing the build to fail.
+
+[33mcommit 17505df552fbd27e9695378031b0d2444ff6e78b[m
+Author: Doug Flick <dougflick@microsoft.com>
+Date:   Wed Feb 5 23:59:14 2025 -0800
+
+    Update Common/MU submodule configuration
+    
+    Submodule name is incorrect and pointing at mu_plus instead of MU.
+
+[33mcommit 7b1dadc6f01267c5bc1a8694e21a1d59cc994b45[m
+Author: Ken Lautner <klautner@microsoft.com>
+Date:   Tue Oct 8 20:13:42 2024 -0700
+
+    Updated CISettings.py
+
+[33mcommit 513629800bd3d0d3d60f46f33a0a2421c15c3311[m
+Author: Ken Lautner <klautner@microsoft.com>
+Date:   Tue Oct 8 19:22:35 2024 -0700
+
+    Updated submodules to 202405
+
+[33mcommit 12bb5570e7b68fbc28fd444c0620563807a1218c[m
+Author: kenlautner <85201046+kenlautner@users.noreply.github.com>
+Date:   Tue Oct 8 18:49:16 2024 -0700
+
+    Add PR test gates for Mu_Crypto_Release (#104)
+    
+    ## Description
+    
+    Add PR gates for Mu_Crypto_Release. This includes CI tests for
+    OpensslPkg and a Crypto Functionality Test which leverages
+    Mu_Tiano_Platforms for verifying that all crypto is functioning
+    properly.
+    
+    For details on how to complete these options and their meaning refer to
+    [CONTRIBUTING.md](https://github.com/microsoft/mu/blob/HEAD/CONTRIBUTING.md).
+    
+    - [ ] Impacts functionality?
+    - [ ] Impacts security?
+    - [ ] Breaking change?
+    - [x] Includes tests?
+    - [ ] Includes documentation?
+    
+    ## How This Was Tested
+    
+    Tested on the pipelines. The current top of tree passes as expected and
+    failing cases correctly fail the pipelines.
+    
+    ## Integration Instructions
+    
+    N/A
+
+[33mcommit 312cd217e337b6e6b9ecb2b913b54022454b7cfe[m[33m ([m[1;31morigin/devel/proof-of-concept[m[33m)[m
+Author: kenlautner <85201046+kenlautner@users.noreply.github.com>
+Date:   Tue Sep 24 14:35:41 2024 -0700
+
+    Remove temporary files from the published binary files (#106)
+    
+    ## Description
+    
+    When migrating the published binary files from MU_BASECORE into this
+    repo the temp files from the crypto generation script were mistakenly
+    included in the commit. This removes them so they aren't accidentally
+    used by downstream consumers.
+    
+    For details on how to complete these options and their meaning refer to
+    [CONTRIBUTING.md](https://github.com/microsoft/mu/blob/HEAD/CONTRIBUTING.md).
+    
+    - [ ] Impacts functionality?
+    - [ ] Impacts security?
+    - [ ] Breaking change?
+    - [ ] Includes tests?
+    - [ ] Includes documentation?
+    
+    ## How This Was Tested
+    
+    N/A
+    
+    ## Integration Instructions
+    
+    N/A
+
+[33mcommit 51af6542f36ece0e831d4603eae3e67daf746af1[m
+Author: Project Mu UEFI Bot [bot] <45776386+uefibot@users.noreply.github.com>
+Date:   Mon Sep 23 22:17:18 2024 -0400
+
+    Repo File Sync: Update Mu DevOps version (#109)
+    
+    synced local file(s) with
+    [microsoft/mu_devops](https://github.com/microsoft/mu_devops).
+    
+    🤖: View the [Repo File Sync Configuration
+    File](https://github.com/microsoft/mu_devops/blob/main/.sync/Files.yml)
+    to see how files are synced.
+    
+    ---
+    
+    This PR was created automatically by the
+    [repo-file-sync-action](https://github.com/BetaHuhn/repo-file-sync-action)
+    workflow run
+    [#11004666094](https://github.com/microsoft/mu_devops/actions/runs/11004666094)
+    
+    Signed-off-by: Project Mu UEFI Bot <uefibot@microsoft.com>
+
+[33mcommit 0588021a1ca6adf6aaaf383555134ade1a71a434[m
+Author: Michael Kubacki <michael.kubacki@microsoft.com>
+Date:   Fri Sep 20 20:58:25 2024 -0400
+
+    generate_cryptodriver: Add useful versioning to shared crypto binaries (#105)
+    
+    ## Description
+    
+    Updates the ver section to reflect version info available depending on
+    the build type.
+    
+    1. Removes hardcoded "1.0" in FFS Version string
+    2. Uses the EDK2 crypto version (binary compat) version for all builds.
+    3. Uses the EDK2 crypto version + Major.Minor.Patch for pipeline
+    (release) builds.
+    
+    - Local Build: `"{EDK2_CRYPTO_VER}"`
+    - CI Build: `"{EDK2_CRYPTO_VER}.{MAJOR}.{MINOR}.{PATCH}"`
+    
+    - [ ] Impacts functionality?
+    - [ ] Impacts security?
+    - [ ] Breaking change?
+    - [ ] Includes tests?
+    - [ ] Includes documentation?
+    
+    ## How This Was Tested
+    
+    - Generate crypto driver
+    - Local build and bundle
+    - Integrate into platform and check VER section in FFS
+    
+    ## Integration Instructions
+    
+    N/A - VER in Shared Crypto FFS will no longer be hardcoded to `1.0`
+    
+    Signed-off-by: Michael Kubacki <michael.kubacki@microsoft.com>
+
+[33mcommit 8303fd27ce1494c3612d564bd5febcd0d8512d75[m
+Author: Doug Flick <dougflick@microsoft.com>
+Date:   Wed Sep 18 15:40:17 2024 -0700
+
+    [Release/202311] CryptoBinPkg: Update EDKII_CRYPTO_VERSION from 17 to 18 (#102)
+    
+    ## Description
+    
+    This change matches the version on the MU_BASECORE of CryptoPkg
+    
+    - [X] Impacts functionality?
+    - [ ] Impacts security?
+    - [ ] Breaking change?
+    - [ ] Includes tests?
+    - [ ] Includes documentation?
+    
+    ## How This Was Tested
+    
+    N/A
+    
+    ## Integration Instructions
+    
+    N/A
+
+[33mcommit f74395185ceb32736e9281bcab938eb9c6e01987[m
+Author: Project Mu UEFI Bot [bot] <45776386+uefibot@users.noreply.github.com>
+Date:   Fri Sep 13 14:26:59 2024 -0400
+
+    Repo File Sync: Update PR template text (#101)
+    
+    synced local file(s) with
+    [microsoft/mu_devops](https://github.com/microsoft/mu_devops).
+    
+    🤖: View the [Repo File Sync Configuration
+    File](https://github.com/microsoft/mu_devops/blob/main/.sync/Files.yml)
+    to see how files are synced.
+    
+    ---
+    
+    This PR was created automatically by the
+    [repo-file-sync-action](https://github.com/BetaHuhn/repo-file-sync-action)
+    workflow run
+    [#10846265775](https://github.com/microsoft/mu_devops/actions/runs/10846265775)
+    
+    Signed-off-by: Project Mu UEFI Bot <uefibot@microsoft.com>
+
+[33mcommit 64c4da35cfabc7250b1f9d9a3517df9894b3c275[m
+Author: Project Mu UEFI Bot [bot] <45776386+uefibot@users.noreply.github.com>
+Date:   Fri Aug 23 17:14:05 2024 -0400
+
+    Repo File Sync: synced file(s) with microsoft/mu_devops (#98)
+    
+    synced local file(s) with
+    [microsoft/mu_devops](https://github.com/microsoft/mu_devops).
+    
+    🤖: View the [Repo File Sync Configuration
+    File](https://github.com/microsoft/mu_devops/blob/main/.sync/Files.yml)
+    to see how files are synced.
+    
+    
+    
+    ---
+    
+    This PR was created automatically by the
+    [repo-file-sync-action](https://github.com/BetaHuhn/repo-file-sync-action)
+    workflow run
+    [#10532319094](https://github.com/microsoft/mu_devops/actions/runs/10532319094)
+    
+    Signed-off-by: Project Mu UEFI Bot <uefibot@microsoft.com>
+
+[33mcommit 5dcfac456c3ef416569bf7e1d3cfefa05decb557[m
+Author: Michael Kubacki <michael.kubacki@microsoft.com>
+Date:   Thu Aug 1 12:10:36 2024 -0400
+
+    CryptoBinPkg: Use OpenSSL intrinsic lib for all archs
+    
+    ArmCompilerIntrinsicsLib was previously used for ARM and AARCH64
+    code. With strcmp moving to CrtWrapper.c, the code can pick it up
+    from there and use the OpensslPkg intrinisc lib instance.
+    
+    Signed-off-by: Michael Kubacki <michael.kubacki@microsoft.com>
+
+[33mcommit 18a21566456d44ce5ca374f963d540832a94f7fe[m
+Author: Yi Li <yi1.li@intel.com>
+Date:   Thu Aug 3 12:37:45 2023 +0800
+
+    [CHERRY-PICK] CryptoPkg: remove strcmp to syscall
+    
+    In rare cases the platform may not provide the full IntrinsicLib.
+    But openssl30 build always require strcmp, provide this function by
+    moving it into CrtWrapper.c.
+    
+    Signed-off-by: Yi Li <yi1.li@intel.com>
+    Cc: Jiewen Yao <jiewen.yao@intel.com>
+    Cc: Xiaoyu Lu <xiaoyu1.lu@intel.com>
+    Cc: Guomin Jiang <guomin.jiang@intel.com>
+    Reviewed-by: Jiewen Yao <jiewen.yao@intel.com>
+    Acked-by: Ard Biesheuvel <ardb@kernel.org>
+    Tested-by: Ard Biesheuvel <ardb@kernel.org>
+    Tested-by: Brian J. Johnson <brian.johnson@hpe.com>
+    Tested-by: Kenneth Lautner <klautner@microsoft.com>
+    
+    (cherry picked from commit 46226fb5d32f6e24eb8f8f48cceb0f67fd8585d4)
+
+[33mcommit 57707e09c66ed2350f6ee832725b71d9647bc66d[m
+Author: Project Mu UEFI Bot [bot] <45776386+uefibot@users.noreply.github.com>
+Date:   Fri Aug 9 11:55:45 2024 -0400
+
+    Repo File Sync: synced file(s) with microsoft/mu_devops (#97)
+    
+    synced local file(s) with
+    [microsoft/mu_devops](https://github.com/microsoft/mu_devops).
+    
+    🤖: View the [Repo File Sync Configuration
+    File](https://github.com/microsoft/mu_devops/blob/main/.sync/Files.yml)
+    to see how files are synced.
+    
+    
+    
+    ---
+    
+    This PR was created automatically by the
+    [repo-file-sync-action](https://github.com/BetaHuhn/repo-file-sync-action)
+    workflow run
+    [#10316616855](https://github.com/microsoft/mu_devops/actions/runs/10316616855)
+    
+    Signed-off-by: Project Mu UEFI Bot <uefibot@microsoft.com>
