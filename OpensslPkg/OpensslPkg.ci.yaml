@@ -104,6 +104,11 @@
     # options defined in .pytool/Plugin/UncrustifyCheck
     "UncrustifyCheck": {
         "IgnoreFiles": [
+            "Library/OpensslLib/OpensslGen/crypto/params_idx.c",
+            "Library/OpensslLib/OpensslGen/include/internal/param_names.h",
+            "Library/OpensslLib/OpensslGen/include/openssl/comp.h",
+            "Library/OpensslLib/OpensslGen/include/openssl/core_names.h",
+            "Library/OpensslLib/OpensslGen/include/openssl/x509_acert.h",
             "opensslconf.h",
             "dso_conf.h",
             "opensslconf_generated.h"
