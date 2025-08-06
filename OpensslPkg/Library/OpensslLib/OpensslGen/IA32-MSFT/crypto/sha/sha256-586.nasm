@@ -4580,4 +4580,4 @@ db      102,15,58,15,249,4
         pop     ebp
         ret
 segment .bss
-common  _OPENSSL_ia32cap_P 16
+common  _OPENSSL_ia32cap_P 40
