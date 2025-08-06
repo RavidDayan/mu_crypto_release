@@ -109,6 +109,10 @@
             "Library/OpensslLib/OpensslGen/include/openssl/comp.h",
             "Library/OpensslLib/OpensslGen/include/openssl/core_names.h",
             "Library/OpensslLib/OpensslGen/include/openssl/x509_acert.h",
+            "Library/OpensslLib/OpensslGen/providers/common/der/der_ml_dsa_gen.c",
+            "Library/OpensslLib/OpensslGen/providers/common/der/der_slh_dsa_gen.c",
+            "Library/OpensslLib/OpensslGen/providers/common/include/prov/der_ml_dsa.h",
+            "Library/OpensslLib/OpensslGen/providers/common/include/prov/der_slh_dsa.h",
             "opensslconf.h",
             "dso_conf.h",
             "opensslconf_generated.h"
