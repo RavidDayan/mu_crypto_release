@@ -79,10 +79,9 @@ ossl_statem_server_post_work (
  */
 int
 ossl_statem_server_construct_message (
-  SSL        *s,
-  WPACKET    *pkt,
-  confunc_f  *confunc,
-  int        *mt
+  SSL_CONNECTION  *s,
+  confunc_f       *confunc,
+  int             *mt
   )
 {
   return 0;
@@ -106,7 +105,7 @@ ossl_statem_server_max_message_size (
 MSG_PROCESS_RETURN
 ossl_statem_server_process_message (
   SSL_CONNECTION  *s,
-  PACKET         *pkt
+  PACKET          *pkt
   )
 {
   return MSG_PROCESS_ERROR;
