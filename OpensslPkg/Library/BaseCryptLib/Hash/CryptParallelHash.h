@@ -65,6 +65,7 @@ void
 SHA3_squeeze (
   uint64_t       A[5][5],
   unsigned char  *out,
+  size_t         len,
   size_t         r,
   int            next
   );
