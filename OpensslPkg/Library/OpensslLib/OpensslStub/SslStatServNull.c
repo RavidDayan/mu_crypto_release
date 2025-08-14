@@ -134,7 +134,7 @@ dtls_raw_hello_verify_request (
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 dtls_construct_hello_verify_request (
   SSL_CONNECTION  *s,
   WPACKET         *pkt
@@ -173,7 +173,7 @@ tls_post_process_client_hello (
   return WORK_ERROR;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_server_hello (
   SSL_CONNECTION  *s,
   WPACKET         *pkt
@@ -182,7 +182,7 @@ tls_construct_server_hello (
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_server_done (
   SSL_CONNECTION  *s,
   WPACKET         *pkt
@@ -191,7 +191,7 @@ tls_construct_server_done (
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_server_key_exchange (
   SSL_CONNECTION  *s,
   WPACKET         *pkt
@@ -200,7 +200,7 @@ tls_construct_server_key_exchange (
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_certificate_request (
   SSL_CONNECTION  *s,
   WPACKET         *pkt
@@ -236,7 +236,7 @@ tls_process_client_certificate (
   return MSG_PROCESS_ERROR;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_server_certificate (
   SSL_CONNECTION  *s,
   WPACKET         *pkt
@@ -245,7 +245,7 @@ tls_construct_server_certificate (
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_new_session_ticket (
   SSL_CONNECTION  *s,
   WPACKET         *pkt
@@ -267,7 +267,7 @@ tls_construct_cert_status_body (
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_cert_status (
   SSL_CONNECTION  *s,
   WPACKET         *pkt
