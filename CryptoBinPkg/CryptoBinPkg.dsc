@@ -74,17 +74,17 @@
   NULL|MdePkg/Library/FltUsedLib/FltUsedLib.inf
 
 
-#
+#StaticInit
 # For stack protection
 #
 [LibraryClasses.common.PEI_CORE]
   NULL|MdePkg/Library/StackCheckLibNull/StackCheckLibNull.inf
 
 [LibraryClasses.common.PEIM, LibraryClasses.common.MM_CORE_STANDALONE, LibraryClasses.common.MM_STANDALONE]
-  StackCheckLib|MdePkg/Library/StackCheckLib/StackCheckLibStaticInit.inf
+  StackCheckLib|MdePkg/Library/StackCheckLib/StackCheckLib.inf
 
 [LibraryClasses.common.DXE_CORE, LibraryClasses.common.SMM_CORE, LibraryClasses.common.DXE_SMM_DRIVER, LibraryClasses.common.DXE_DRIVER, LibraryClasses.common.DXE_RUNTIME_DRIVER, LibraryClasses.common.DXE_SAL_DRIVER, LibraryClasses.common.UEFI_DRIVER, LibraryClasses.common.UEFI_APPLICATION]
-  StackCheckLib|MdePkg/Library/StackCheckLib/StackCheckLibStaticInit.inf
+  StackCheckLib|MdePkg/Library/StackCheckLib/StackCheckLib.inf
 
 [LibraryClasses.common.DXE_DRIVER, LibraryClasses.common.DXE_RUNTIME_DRIVER, LibraryClasses.common.UEFI_APPLICATION]
   RngLib|MdePkg/Library/DxeRngLib/DxeRngLib.inf
