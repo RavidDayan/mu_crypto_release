@@ -12,6 +12,14 @@ SPDX-License-Identifier: BSD-2-Clause-Patent
 #ifndef __CRT_LIB_SUPPORT_H__
 #define __CRT_LIB_SUPPORT_H__
 
+// Force our stdint.h inclusion before any system headers
+#include "stdint.h"
+
+// Prevent any future system stdint.h inclusion
+#ifndef _STDINT_H
+#define _STDINT_H
+#endif
+
 #include <Library/BaseLib.h>
 #include <Library/BaseMemoryLib.h>
 #include <Library/DebugLib.h>
