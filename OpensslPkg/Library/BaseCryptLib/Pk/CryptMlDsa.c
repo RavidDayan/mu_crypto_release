@@ -24,7 +24,6 @@
   @retval     Algorithm name string for OpenSSL.
   @retval     NULL if parameter set not supported.
 **/
-STATIC
 CONST CHAR8 *
 MlDsaNidToOpensslAlgName (
   IN UINTN  MlDsaNid
