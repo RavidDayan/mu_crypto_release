@@ -210,7 +210,7 @@ def read_header_file(options, path):
         def set_return_type_if_valid(self, line: str):
             ''' Sets the return type to what is passed in, if it's a valid return type '''
             line = line.upper()
-            if line not in ["VOID *", "VOID*", "BOOLEAN", "UINTN", "VOID", "RETURN_STATUS", "UINT8", "UINT16", "UINT32", "INTN", "EFI_STATUS"]:
+            if line not in ["VOID *", "VOID*", "BOOLEAN", "UINTN", "VOID", "RETURN_STATUS", "UINT8", "UINT16", "UINT32", "INTN", "EFI_STATUS", "CONST CHAR8 *", "CONST CHAR8*"]:
                 return False
             self.return_type = line
             return True
@@ -252,12 +252,14 @@ def read_header_file(options, path):
                 return "FALSE"
             if self.return_type == "VOID*" or self.return_type == "VOID *":
                 return "NULL"
+            if self.return_type == "CONST CHAR8*" or self.return_type == "CONST CHAR8 *":
+                return "NULL"
             return "0"
 
         def get_params_tuple(self):
             ''' get the parameters as a tuple. If there aren't any, it returns ["VOID"] '''
             param_names = list(map(lambda x: x.strip(",").strip().replace(" OPTIONAL", "").strip("[]").strip().split()[-1].strip("*").strip(","), self.params))
-            if len(param_names) == 1 and param_names[0] == 'VOID':
+            if len(param_names) == 1 and param_names[0] == 'VOID': 
                 return []
             return param_names
 
