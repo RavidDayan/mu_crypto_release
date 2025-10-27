@@ -74,24 +74,23 @@
   NULL|MdePkg/Library/FltUsedLib/FltUsedLib.inf
 
 
-#
+#StaticInit
 # For stack protection
 #
 [LibraryClasses.common.PEI_CORE]
   NULL|MdePkg/Library/StackCheckLibNull/StackCheckLibNull.inf
 
 [LibraryClasses.common.PEIM, LibraryClasses.common.MM_CORE_STANDALONE, LibraryClasses.common.MM_STANDALONE]
-  NULL|MdePkg/Library/StackCheckLib/StackCheckLibStaticInit.inf
+  StackCheckLib|MdePkg/Library/StackCheckLib/StackCheckLib.inf
 
 [LibraryClasses.common.DXE_CORE, LibraryClasses.common.SMM_CORE, LibraryClasses.common.DXE_SMM_DRIVER, LibraryClasses.common.DXE_DRIVER, LibraryClasses.common.DXE_RUNTIME_DRIVER, LibraryClasses.common.DXE_SAL_DRIVER, LibraryClasses.common.UEFI_DRIVER, LibraryClasses.common.UEFI_APPLICATION]
-  NULL|MdePkg/Library/StackCheckLib/StackCheckLibStaticInit.inf
+  StackCheckLib|MdePkg/Library/StackCheckLib/StackCheckLib.inf
 
 [LibraryClasses.common.DXE_DRIVER, LibraryClasses.common.DXE_RUNTIME_DRIVER, LibraryClasses.common.UEFI_APPLICATION]
   RngLib|MdePkg/Library/DxeRngLib/DxeRngLib.inf
 
 !if $(TOOL_CHAIN_TAG) == VS2019 or $(TOOL_CHAIN_TAG) == VS2022
 [LibraryClasses.IA32]
-  NULL|MdePkg/Library/VsIntrinsicLib/VsIntrinsicLib.inf
   ReportStatusCodeLib|MdePkg/Library/BaseReportStatusCodeLibNull/BaseReportStatusCodeLibNull.inf
 [LibraryClasses.X64.DXE_CORE, LibraryClasses.X64.UEFI_DRIVER, LibraryClasses.X64.DXE_DRIVER, LibraryClasses.X64.UEFI_APPLICATION]
   # this is currently X64 only because MSVC doesn't support BaseMemoryLibOptDxe for AARCH64
@@ -195,7 +194,7 @@
 #
 ###################################################################################################
 [Components.X64]
-  CryptoPkg/Test/UnitTest/Library/BaseCryptLib/BaseCryptLibUnitTestApp.inf {
+CryptoPkg/Test/UnitTest/Library/BaseCryptLib/BaseCryptLibUnitTestApp.inf {
     <LibraryClasses>
       BaseCryptLib|OpensslPkg/Library/BaseCryptLib/BaseCryptLib.inf
       UnitTestResultReportLib |XmlSupportPkg/Library/UnitTestResultReportJUnitFormatLib/UnitTestResultReportLib.inf
@@ -209,6 +208,8 @@
     <PcdsFixedAtBuild>
       !include CryptoPkg/Test/Crypto.pcd.ALL.inc.dsc
   }
+
+
 [Components.IA32, Components.X64]
   CryptoBinPkg/Driver/CryptoSmm.inf {
     <Defines>
@@ -246,6 +247,11 @@
 
 [BuildOptions]
   *_*_*_CC_FLAGS = -D DISABLE_NEW_DEPRECATED_INTERFACES
+  # Fix for stdint.h type conflicts - prioritize project headers over system headers
+  GCC:*_*_*_CC_FLAGS = -I$(WORKSPACE)/OpensslPkg/Library/Include -nostdinc -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS
+  MSFT:*_*_*_CC_FLAGS = /I$(WORKSPACE)/OpensslPkg/Library/Include
+  INTEL:*_*_*_CC_FLAGS = /I$(WORKSPACE)/OpensslPkg/Library/Include
+  RVCT:*_*_*_CC_FLAGS = -I$(WORKSPACE)/OpensslPkg/Library/Include
 !if $(CRYPTO_SERVICES) IN "PACKAGE ALL"
   MSFT:*_*_*_CC_FLAGS = /D ENABLE_MD5_DEPRECATED_INTERFACES
   INTEL:*_*_*_CC_FLAGS = /D ENABLE_MD5_DEPRECATED_INTERFACES
