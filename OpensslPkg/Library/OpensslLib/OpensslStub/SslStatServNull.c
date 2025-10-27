@@ -13,8 +13,8 @@
 
 int
 ossl_statem_server_read_transition (
-  SSL  *s,
-  int  mt
+  SSL_CONNECTION  *s,
+  int             mt
   )
 {
   return 0;
@@ -29,7 +29,7 @@ ossl_statem_server_read_transition (
  */
 int
 send_certificate_request (
-  SSL  *s
+  SSL_CONNECTION  *s
   )
 {
   return 0;
@@ -41,7 +41,7 @@ send_certificate_request (
  */
 WRITE_TRAN
 ossl_statem_server_write_transition (
-  SSL  *s
+  SSL_CONNECTION  *s
   )
 {
   return WRITE_TRAN_ERROR;
@@ -49,8 +49,8 @@ ossl_statem_server_write_transition (
 
 WORK_STATE
 ossl_statem_server_pre_work (
-  SSL         *s,
-  WORK_STATE  wst
+  SSL_CONNECTION  *s,
+  WORK_STATE     wst
   )
 {
   return WORK_ERROR;
@@ -62,8 +62,8 @@ ossl_statem_server_pre_work (
  */
 WORK_STATE
 ossl_statem_server_post_work (
-  SSL         *s,
-  WORK_STATE  wst
+  SSL_CONNECTION  *s,
+  WORK_STATE     wst
   )
 {
   return WORK_ERROR;
@@ -79,10 +79,9 @@ ossl_statem_server_post_work (
  */
 int
 ossl_statem_server_construct_message (
-  SSL        *s,
-  WPACKET    *pkt,
-  confunc_f  *confunc,
-  int        *mt
+  SSL_CONNECTION  *s,
+  confunc_f       *confunc,
+  int             *mt
   )
 {
   return 0;
@@ -94,7 +93,7 @@ ossl_statem_server_construct_message (
  */
 size_t
 ossl_statem_server_max_message_size (
-  SSL  *s
+  SSL_CONNECTION  *s
   )
 {
   return 0;
@@ -105,8 +104,8 @@ ossl_statem_server_max_message_size (
  */
 MSG_PROCESS_RETURN
 ossl_statem_server_process_message (
-  SSL     *s,
-  PACKET  *pkt
+  SSL_CONNECTION  *s,
+  PACKET          *pkt
   )
 {
   return MSG_PROCESS_ERROR;
@@ -118,8 +117,8 @@ ossl_statem_server_process_message (
  */
 WORK_STATE
 ossl_statem_server_post_process_message (
-  SSL         *s,
-  WORK_STATE  wst
+  SSL_CONNECTION  *s,
+  WORK_STATE     wst
   )
 {
   return WORK_ERROR;
@@ -135,10 +134,10 @@ dtls_raw_hello_verify_request (
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 dtls_construct_hello_verify_request (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
@@ -146,8 +145,8 @@ dtls_construct_hello_verify_request (
 
 MSG_PROCESS_RETURN
 tls_process_client_hello (
-  SSL     *s,
-  PACKET  *pkt
+  SSL_CONNECTION  *s,
+  PACKET         *pkt
   )
 {
   return MSG_PROCESS_ERROR;
@@ -159,7 +158,7 @@ tls_process_client_hello (
  */
 int
 tls_handle_alpn (
-  SSL  *s
+  SSL_CONNECTION  *s
   )
 {
   return 0;
@@ -167,44 +166,44 @@ tls_handle_alpn (
 
 WORK_STATE
 tls_post_process_client_hello (
-  SSL         *s,
-  WORK_STATE  wst
+  SSL_CONNECTION  *s,
+  WORK_STATE     wst
   )
 {
   return WORK_ERROR;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_server_hello (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_server_done (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_server_key_exchange (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_certificate_request (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
@@ -212,8 +211,8 @@ tls_construct_certificate_request (
 
 MSG_PROCESS_RETURN
 tls_process_client_key_exchange (
-  SSL     *s,
-  PACKET  *pkt
+  SSL_CONNECTION  *s,
+  PACKET         *pkt
   )
 {
   return MSG_PROCESS_ERROR;
@@ -221,8 +220,8 @@ tls_process_client_key_exchange (
 
 WORK_STATE
 tls_post_process_client_key_exchange (
-  SSL         *s,
-  WORK_STATE  wst
+  SSL_CONNECTION  *s,
+  WORK_STATE     wst
   )
 {
   return WORK_ERROR;
@@ -230,26 +229,26 @@ tls_post_process_client_key_exchange (
 
 MSG_PROCESS_RETURN
 tls_process_client_certificate (
-  SSL     *s,
-  PACKET  *pkt
+  SSL_CONNECTION  *s,
+  PACKET         *pkt
   )
 {
   return MSG_PROCESS_ERROR;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_server_certificate (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_new_session_ticket (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
@@ -261,17 +260,17 @@ tls_construct_new_session_ticket (
  */
 int
 tls_construct_cert_status_body (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
 }
 
-int
+CON_FUNC_RETURN
 tls_construct_cert_status (
-  SSL      *s,
-  WPACKET  *pkt
+  SSL_CONNECTION  *s,
+  WPACKET         *pkt
   )
 {
   return 0;
@@ -285,8 +284,8 @@ tls_construct_cert_status (
  */
 MSG_PROCESS_RETURN
 tls_process_next_proto (
-  SSL     *s,
-  PACKET  *pkt
+  SSL_CONNECTION  *s,
+  PACKET         *pkt
   )
 {
   return MSG_PROCESS_ERROR;
@@ -296,8 +295,8 @@ tls_process_next_proto (
 
 MSG_PROCESS_RETURN
 tls_process_end_of_early_data (
-  SSL     *s,
-  PACKET  *pkt
+  SSL_CONNECTION  *s,
+  PACKET         *pkt
   )
 {
   return MSG_PROCESS_ERROR;

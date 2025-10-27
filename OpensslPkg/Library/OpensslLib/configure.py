@@ -62,6 +62,7 @@ def openssl_configure(openssldir, target, ec = True):
         'no-padlockeng',
         'no-poly1305',
         'no-posix-io',
+        'no-quic',
         'no-rc2',
         'no-rc4',
         'no-rc5',
