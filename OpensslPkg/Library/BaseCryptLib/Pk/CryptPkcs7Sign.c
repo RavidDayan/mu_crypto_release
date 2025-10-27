@@ -81,7 +81,7 @@ Pkcs7Sign (
   //
   // Retrieve RSA private key from PEM data.
   //
-  Status = RsaGetPrivateKeyFromPem (
+  Status = RsaGetPrivateKeyFromPem ( 
              PrivateKey,
              PrivateKeySize,
              (CONST CHAR8 *)KeyPassword,
